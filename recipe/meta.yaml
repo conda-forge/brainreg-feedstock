@@ -16,8 +16,8 @@ build:
   script:
     # Remove niftyreg binaries in the PyPI distribution as we should depend on
     # niftyreg as already packaged in conda-forge
-    - rm -r brainreg/bin  # [not win]
-    - rd /s /q "brainreg/bin"  # [win]
+    - rm -r src/brainreg/bin  # [not win]
+    - rd /s /q "src/brainreg/bin"  # [win]
     - {{ PYTHON }} -m pip install . -vv
   number: 0
 
@@ -33,12 +33,12 @@ requirements:
     - numpy
     - configparser
     - scikit-image
-    - multiprocessing-logging
-    - configobj
-    - slurmio
     - imio
     - fancylog
-    - imlib >=0.0.26
+    - brainglobe-utils
+    - scipy
+    - pandas
+    - tqdm
 
 test:
   imports:
