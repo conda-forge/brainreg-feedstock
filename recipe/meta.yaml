@@ -1,5 +1,5 @@
 {% set name = "brainreg" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/brainreg-{{ version }}.tar.gz
-  sha256: 90e2a660d499f0357b83272beb1557864cbe624099079451ad27ebb5fd36e5aa
+  sha256: 3ef15fbebb835738f8aa918616d653f51fc0aab7f0a005937330078f5121c656
 
 build:
   entry_points:
@@ -16,8 +16,8 @@ build:
   script:
     # Remove niftyreg binaries in the PyPI distribution as we should depend on
     # niftyreg as already packaged in conda-forge
-    - rm -r brainreg/bin  # [not win]
-    - rd /s /q "brainreg/bin"  # [win]
+    - rm -r src/brainreg/bin  # [not win]
+    - rd /s /q "src/brainreg/bin"  # [win]
     - {{ PYTHON }} -m pip install . -vv
   number: 0
 
@@ -33,12 +33,12 @@ requirements:
     - numpy
     - configparser
     - scikit-image
-    - multiprocessing-logging
-    - configobj
-    - slurmio
     - imio
     - fancylog
-    - imlib >=0.0.26
+    - brainglobe-utils
+    - scipy
+    - pandas
+    - tqdm
 
 test:
   imports:
