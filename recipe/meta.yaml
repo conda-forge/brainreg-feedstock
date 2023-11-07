@@ -23,22 +23,24 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.9
     - pip
   run:
-    - python >=3.7
+    - python >=3.9
     - bg-atlasapi
     - bg-space
-    - niftyreg
-    - numpy
-    - configparser
-    - scikit-image
-    - imio
+    - brainglobe-napari-io
+    - brainglobe-segmentation >=1.0.0
+    - brainglobe-utils >=0.2.7
     - fancylog
-    - brainglobe-utils
-    - scipy
-    - pandas
-    - tqdm
+    - imio
+    - magicgui
+    - napari-plugin-engine >=0.1.4
+    - napari[pyqt5]
+    - numpy
+    - pooch>1
+    - qtpy
+    - scikit-image
 
 test:
   imports:
