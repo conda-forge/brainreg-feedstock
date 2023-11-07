@@ -38,7 +38,7 @@ requirements:
     - napari-plugin-engine >=0.1.4
     - napari[pyqt5]
     - numpy
-    - pooch>1
+    - pooch >1
     - qtpy
     - scikit-image
 
