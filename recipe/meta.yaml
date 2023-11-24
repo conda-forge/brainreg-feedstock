@@ -1,5 +1,5 @@
 {% set name = "brainreg" %}
-{% set version = "0.5.1" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,38 +7,40 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/brainreg-{{ version }}.tar.gz
-  sha256: 3ef15fbebb835738f8aa918616d653f51fc0aab7f0a005937330078f5121c656
+  sha256: 703457275974c4de63e1c9a1836c1b59856334f85fd95b3c2b3767f12a0085f8
 
 build:
   entry_points:
-    - brainreg = brainreg.cli:main
+    - brainreg = brainreg.core.cli:main
   noarch: python
   script:
     # Remove niftyreg binaries in the PyPI distribution as we should depend on
     # niftyreg as already packaged in conda-forge
-    - rm -r src/brainreg/bin  # [not win]
-    - rd /s /q "src/brainreg/bin"  # [win]
+    - rm -r brainreg/core/bin  # [not win]
+    - rd /s /q "brainreg/core/bin"  # [win]
     - {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.9
     - pip
   run:
-    - python >=3.7
+    - python >=3.9
     - bg-atlasapi
     - bg-space
-    - niftyreg
-    - numpy
-    - configparser
-    - scikit-image
-    - imio
+    - brainglobe-napari-io
+    - brainglobe-segmentation >=1.0.0
+    - brainglobe-utils >=0.2.7
     - fancylog
-    - brainglobe-utils
-    - scipy
-    - pandas
-    - tqdm
+    - imio
+    - magicgui
+    - napari-plugin-engine >=0.1.4
+    - napari[pyqt5]
+    - numpy
+    - pooch >1
+    - qtpy
+    - scikit-image
 
 test:
   imports:
