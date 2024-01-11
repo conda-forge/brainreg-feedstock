@@ -19,7 +19,7 @@ build:
     - rm -r brainreg/core/bin  # [not win]
     - rd /s /q "brainreg/core/bin"  # [win]
     - {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -36,7 +36,11 @@ requirements:
     - imio
     - magicgui
     - napari-plugin-engine >=0.1.4
-    - napari[pyqt5]
+    - napari
+    - pyqt
+    - pandas
+    - scipy
+    - tqdm
     - numpy
     - pooch >1
     - qtpy
