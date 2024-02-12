@@ -28,7 +28,7 @@ requirements:
   run:
     - python >=3.9
     - bg-atlasapi
-    - bg-space
+    - brainglobe-space
     - brainglobe-napari-io
     - brainglobe-segmentation >=1.0.0
     - brainglobe-utils >=0.2.7
