@@ -27,13 +27,12 @@ requirements:
     - pip
   run:
     - python >=3.9
-    - bg-atlasapi
-    - bg-space
+    - brainglobe-atlasapi
+    - brainglobe-space
     - brainglobe-napari-io
     - brainglobe-segmentation >=1.0.0
     - brainglobe-utils >=0.2.7
     - fancylog
-    - imio
     - magicgui
     - napari-plugin-engine >=0.1.4
     - napari
