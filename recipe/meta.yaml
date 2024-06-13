@@ -19,7 +19,7 @@ build:
     - rm -r brainreg/core/bin  # [not win]
     - rd /s /q "brainreg/core/bin"  # [win]
     - {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
