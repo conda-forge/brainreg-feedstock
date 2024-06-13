@@ -36,6 +36,7 @@ requirements:
     - magicgui
     - napari-plugin-engine >=0.1.4
     - napari
+    - niftyreg
     - pyqt
     - pandas
     - scipy
