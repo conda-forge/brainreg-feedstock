@@ -1,5 +1,5 @@
 {% set name = "brainreg" %}
-{% set version = "1.0.9" %}
+{% set version = "1.0.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/brainreg-{{ version }}.tar.gz
-  sha256: f7d7228b52016407c5973a2d21fa3f4a74b19c4e7c57d21c5d03631a1c2b1aae
+  sha256: 79700902e8ebb0d7274d3609d8573d0fe053078d70dfb7fd9e9f26c7ba4d130c
 
 build:
   entry_points:
@@ -19,7 +19,7 @@ build:
     - rm -r brainreg/core/bin  # [not win]
     - rd /s /q "brainreg/core/bin"  # [win]
     - {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
