@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/brainreg-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/brainreg-{{ version }}.tar.gz
   sha256: 79700902e8ebb0d7274d3609d8573d0fe053078d70dfb7fd9e9f26c7ba4d130c
 
 build:
@@ -19,14 +19,14 @@ build:
     - rm -r brainreg/core/bin  # [not win]
     - rd /s /q "brainreg/core/bin"  # [win]
     - {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - brainglobe-atlasapi
     - brainglobe-space
     - brainglobe-napari-io
@@ -54,6 +54,7 @@ test:
     - brainreg --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: Automated 3D brain registration
