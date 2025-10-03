@@ -1,5 +1,5 @@
 {% set name = "brainreg" %}
-{% set version = "1.0.13" %}
+{% set version = "1.0.14" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/brainreg-{{ version }}.tar.gz
-  sha256: a9a24d8702ede1f54bcaea067a082a4dbc9320c77acab5f9ba90b1fc9bb1905e
+  sha256: a09e8f25d896d42d6aed8f2c9921ce231a89c18f4b8324e688f573b8f87db171
 
 build:
   entry_points:
